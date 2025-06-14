@@ -1,14 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import { 
   CheckCircle, 
-  XCircle, 
   Clock, 
   Trophy, 
-  Award,
   ChevronRight,
   ArrowRight
 } from "lucide-react";
@@ -373,9 +372,11 @@ export default function QuizzesPage() {
               >
                 {quiz.imageUrl && (
                   <div className="h-40 overflow-hidden">
-                    <img
+                    <Image
                       src={quiz.imageUrl}
                       alt={quiz.title}
+                      width={500}
+                      height={300}
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                     />
                   </div>

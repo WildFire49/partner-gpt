@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useEffect } from "react";
-import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Heart, MessageCircle, Calendar, Brain, Sparkles, Award } from "lucide-react";
@@ -109,7 +108,7 @@ export function FeaturesSection() {
     <section ref={sectionRef} className="py-20 md:py-32 bg-muted/30">
       <div className="container">
         <h2 className="section-title text-3xl md:text-4xl font-bold text-center font-heading mb-16">
-          Features You'll Love
+          Features You&apos;ll Love
         </h2>
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -117,7 +116,7 @@ export function FeaturesSection() {
             {features.map((feature, index) => (
               <div
                 key={feature.title}
-                ref={el => (featureRefs.current[index] = el)}
+                ref={(el) => { featureRefs.current[index] = el; }}
                 className="flex flex-col gap-4 p-6 rounded-lg bg-background border border-border/50 shadow-sm"
               >
                 <div className="p-3 rounded-full bg-primary/10 w-fit">

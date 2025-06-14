@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { format } from "date-fns";
+import Image from "next/image";
 import {
   CalendarIcon,
   Search,
@@ -12,7 +13,7 @@ import {
   BookmarkPlus
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
+import { motion, easeOut } from "framer-motion";
 
 // Memory type
 type Memory = {
@@ -79,7 +80,7 @@ const filterOptions = [
 ];
 
 export default function MemoriesPage() {
-  const [memories, setMemories] = useState<Memory[]>(sampleMemories);
+  const [memories] = useState<Memory[]>(sampleMemories);
   const [searchQuery, setSearchQuery] = useState("");
   const [activeFilter, setActiveFilter] = useState("All Memories");
   
@@ -108,7 +109,7 @@ export default function MemoriesPage() {
       opacity: 1,
       transition: { 
         duration: 0.5,
-        ease: "easeOut" 
+        ease: easeOut
       }
     }
   };
@@ -172,9 +173,11 @@ export default function MemoriesPage() {
             >
               {memory.imageUrl && (
                 <div className="w-full h-48 overflow-hidden">
-                  <img
+                  <Image
                     src={memory.imageUrl}
                     alt={memory.title}
+                    width={600}
+                    height={300}
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   />
                 </div>
@@ -228,7 +231,7 @@ export default function MemoriesPage() {
             </div>
             <h3 className="text-lg font-medium mb-1">No memories found</h3>
             <p className="text-muted-foreground">
-              Try adjusting your search or filter to find what you're looking for
+              Try adjusting your search or filter to find what you&apos;re looking for
             </p>
             <Button variant="outline" className="mt-4" onClick={() => setSearchQuery("")}>
               Clear search

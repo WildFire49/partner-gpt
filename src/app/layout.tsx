@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins, Quicksand } from "next/font/google";
-import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeProvider } from "next-themes";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 

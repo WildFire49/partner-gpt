@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useEffect } from "react";
-import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Star } from "lucide-react";
@@ -95,7 +94,7 @@ export function TestimonialsSection() {
           {testimonials.map((testimonial, index) => (
             <div
               key={testimonial.name}
-              ref={el => (testimonialRefs.current[index] = el)}
+              ref={(el) => { testimonialRefs.current[index] = el; }}
               className="bg-background border border-border/50 rounded-xl p-6 shadow-sm flex flex-col"
             >
               <div className="flex items-center gap-1 mb-4">

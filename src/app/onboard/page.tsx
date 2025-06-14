@@ -12,7 +12,7 @@ const steps = [
     id: "welcome",
     title: "Welcome to PartnerGPT",
     description:
-      "Let's get to know each other better so I can be the best partner for you.",
+      "Let&apos;s get to know each other better so I can be the best partner for you.",
   },
   {
     id: "basics",
@@ -32,7 +32,7 @@ const steps = [
   {
     id: "complete",
     title: "All Set!",
-    description: "You're ready to start your journey with PartnerGPT.",
+    description: "You&apos;re ready to start your journey with PartnerGPT.",
   },
 ];
 
@@ -97,8 +97,9 @@ export default function OnboardPage() {
                   <span className="text-3xl">👋</span>
                 </div>
                 <p className="text-center max-w-md text-muted-foreground">
-                  I'm excited to get to know you! In the next few steps, I'll
-                  ask you some questions to help personalize your experience.
+                  I&apos;m excited to get to know you! In the next few steps,
+                  I&apos;ll ask you some questions to help personalize your
+                  experience.
                 </p>
               </div>
             )}
@@ -107,7 +108,7 @@ export default function OnboardPage() {
               <div className="space-y-6">
                 <div className="grid gap-2">
                   <label htmlFor="name" className="text-sm font-medium">
-                    What's your name?
+                    What&apos;s your name?
                   </label>
                   <input
                     id="name"
@@ -117,7 +118,7 @@ export default function OnboardPage() {
                 </div>
                 <div className="grid gap-2">
                   <label htmlFor="birthdate" className="text-sm font-medium">
-                    When's your birthday?
+                    When&apos;s your birthday?
                   </label>
                   <input
                     id="birthdate"
@@ -209,10 +210,12 @@ export default function OnboardPage() {
                 <div className="w-24 h-24 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mb-6">
                   <span className="text-3xl">🎉</span>
                 </div>
-                <h2 className="text-2xl font-semibold mb-3">You're all set!</h2>
+                <h2 className="text-2xl font-semibold mb-3">
+                  You&apos;re all set!
+                </h2>
                 <p className="max-w-md text-muted-foreground mb-8">
-                  Thank you for sharing about yourself. I'm looking forward to
-                  being your AI partner and helping you along your journey.
+                  Thank you for sharing about yourself. I&apos;m looking forward
+                  to being your AI partner and helping you along your journey.
                 </p>
                 <Link href="/chat">
                   <Button className="flex items-center gap-2">
